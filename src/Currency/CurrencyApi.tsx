@@ -1,4 +1,4 @@
-import ApiService from './ApiService';
+import ApiService from '../ApiService';
 
 const baseUrl = process.env.REACT_APP_CURRENCY_PATH;
 const CurrencyApi = {    
