@@ -1,10 +1,10 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import RowItem from './RowItem';
-import { CurrencyRate } from '../types';
+import { CurrencyRate } from '../Utils/types';
 import { Collapse } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import constants from '../constants';
+import constants from '../Utils/constants';
 
 interface CurrencyItemProps {
   item: CurrencyRate;
@@ -63,11 +63,9 @@ const CurrencyItem: React.FC<CurrencyItemProps> = (props) => {
           </CurrencyRow>
         </Collapse>
       </ValuesDiv>
-      <div>
-        <IconDiv>
-          <FontAwesomeIcon size="lg" color="#6ac7b0" icon={collapse ? "chevron-circle-down" : "chevron-circle-up"} />
-        </IconDiv>
-      </div>
+      <IconDiv>
+        <FontAwesomeIcon size="lg" color="#6ac7b0" icon={collapse ? "chevron-circle-down" : "chevron-circle-up"} />
+      </IconDiv>
     </ItemContainer>
   );
 };

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import testdata from './testdata';
+import testdata from '../testdata';
 
 const baseUrl = process.env.REACT_APP_API_BASE_URL;
 

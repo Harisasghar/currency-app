@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { CurrencyRate } from '../types';
+import { CurrencyRate } from '../Utils/types';
 import CurrencyItem from './CurrencyItem';
 
 interface CurrencyListProps {

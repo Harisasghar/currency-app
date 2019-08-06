@@ -3,7 +3,7 @@ import './App.scss';
 import Header from './Header';
 import CurrencyRates from './Currency/CurrencyRates';
 import styled from 'styled-components';
-import constants from './constants';
+import constants from './Utils/constants';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faChevronCircleDown, faChevronCircleUp
 } from '@fortawesome/free-solid-svg-icons';

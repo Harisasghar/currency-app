@@ -2,10 +2,10 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { Input, Button } from 'reactstrap';
 import { useEffect, useCallback } from 'react';
-import CurrencyApi from './CurrencyApi';
-import { CurrencyRate } from '../types';
+import CurrencyApi from '../Services/CurrencyApi';
+import { CurrencyRate } from '../Utils/types';
 import CurrencyList from './CurrencyList';
-import constants from '../constants';
+import constants from '../Utils/constants';
 
 const ArticleStyled = styled.article`
 `;
