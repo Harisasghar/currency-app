@@ -7,8 +7,6 @@ import { CurrencyRate } from '../Utils/types';
 import CurrencyList from './CurrencyList';
 import constants from '../Utils/constants';
 
-const ArticleStyled = styled.article`
-`;
 const TitleDiv = styled.div`
   margin: 2em 0 2em 0;
   text-align: left;  
@@ -72,7 +70,7 @@ const CurrencyRates: React.FC = () => {
   }, []);
 
   return (
-    <ArticleStyled>
+    <article>
       <TitleDiv>
         <div><TextSpan>Rates against NOK</TextSpan></div>
         <div><Button color="info" size="md" onClick={reload}>Reload</Button></div>
@@ -84,7 +82,7 @@ const CurrencyRates: React.FC = () => {
       <CurrencyDiv>
         <CurrencyList rates={state.filtered}></CurrencyList>
       </CurrencyDiv>
-    </ArticleStyled>);
+    </article>);
 };
 
 export default CurrencyRates;
