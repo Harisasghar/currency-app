@@ -5,12 +5,12 @@ import CurrencyRates from './Currency/CurrencyRates';
 import styled from 'styled-components';
 import constants from './constants';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faAngleDoubleDown, faAngleDoubleUp, faChevronCircleDown, faChevronCircleUp
+import { faChevronCircleDown, faChevronCircleUp
 } from '@fortawesome/free-solid-svg-icons';
 library.add( faChevronCircleDown, faChevronCircleUp);
 
 const SectionStyled = styled.section`
-  margin: 0 10% 0 10%;
+  margin: 0 15% 0 15%;
   @media (max-width: ${constants.screen.small + 'px'}) { 
     margin: 0 0 0 1%;
   }

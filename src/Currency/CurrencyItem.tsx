@@ -4,6 +4,7 @@ import RowItem from './RowItem';
 import { CurrencyRate } from '../types';
 import { Collapse } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import constants from '../constants';
 
 interface CurrencyItemProps {
   item: CurrencyRate;
@@ -25,18 +26,19 @@ const CurrencyRow = styled.div`
   margin: .5em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-`;
-const ExpandedRow = styled.div`
-  margin: .5em;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  @media (max-width: ${constants.screen.small + 'px'}) { 
+    grid-template-columns: 1fr 1fr; 
+    margin: 1em;
+  } 
 `;
 
 const IconDiv = styled.div`
  margin: 1.5em 0 0 -1.1em;
+ @media (max-width: ${constants.screen.small + 'px'}) { 
+  margin: 3em 0 0 -1.1em;
+  } 
  svg { background: white; }
 `;
-
 
 const CurrencyItem: React.FC<CurrencyItemProps> = (props) => {
   const [collapse, setCollapse] = React.useState(true);
@@ -50,7 +52,7 @@ const CurrencyItem: React.FC<CurrencyItemProps> = (props) => {
           <RowItem label="Sell rate transfer" val={props.item.sellRateTransfer}></RowItem>
         </CurrencyRow>
         <Collapse isOpen={!collapse}>
-          <ExpandedRow>
+          <CurrencyRow>
             <RowItem label="Country" val={props.item.country}></RowItem>
             <RowItem label="Updated" val={(new Intl.DateTimeFormat('no-NO').format(new Date(props.item.updatedDate)))}></RowItem>
             <RowItem label="Mid rate" val={props.item.midRate}></RowItem>
@@ -58,12 +60,12 @@ const CurrencyItem: React.FC<CurrencyItemProps> = (props) => {
             <RowItem label="Prev. mid rate" val={props.item.previousMidRate}></RowItem>
             <RowItem label="Buy rate" val={props.item.buyRateCash}></RowItem>
             <RowItem label="Sell rate" val={props.item.sellRateCash}></RowItem>
-          </ExpandedRow>
+          </CurrencyRow>
         </Collapse>
       </ValuesDiv>
       <div>
         <IconDiv>
-          <FontAwesomeIcon size="lg" color="#6ac7b0" icon={collapse?"chevron-circle-down":"chevron-circle-up"} />
+          <FontAwesomeIcon size="lg" color="#6ac7b0" icon={collapse ? "chevron-circle-down" : "chevron-circle-up"} />
         </IconDiv>
       </div>
     </ItemContainer>
